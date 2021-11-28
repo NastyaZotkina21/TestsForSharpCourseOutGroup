@@ -19,3 +19,4 @@ public class Tests
     public void TestWithOutException(int temp) => Assert.DoesNotThrow(delegate { HomeWorks.ClassTest.MetrodWithException(temp); },
     "Метод возвращает исключение на указных параметрах");
 }
+}
