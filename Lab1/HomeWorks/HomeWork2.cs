@@ -13,7 +13,41 @@ namespace Lab1.HomeWorks
         /// <returns>Самая длинная строка, ее длина, самая маленькая трока и ее длина. Пример вывода return ("max1", 4, "min", 3);</returns>
         public static (string max, int lengthMax, string min, int lengthMin) Variant1(string[] temp)
         {
-            throw new System.Exception("Не реализован вариант1");
+            string[] LocalArray;
+
+            LocalArray = temp;
+
+            string MinLenStr;
+            string MaxLenStr = "";
+            int max;
+            int min;
+
+            MinLenStr = LocalArray[0];
+
+            foreach (string a in LocalArray)
+            {
+                if (a.Length <= MinLenStr.Length)
+                {
+                    MinLenStr = a;
+                }
+
+            }
+
+             MaxLenStr = LocalArray[0];
+
+             foreach (string b in LocalArray)
+             {
+                    if (b.Length >= MaxLenStr.Length)
+                {
+                    MaxLenStr = b;
+                }
+             }
+
+            min = MinLenStr.Length;
+            max = MaxLenStr.Length;
+
+            return (MaxLenStr, max, MinLenStr, min);
+
         }
 
         /// <summary>
@@ -23,7 +57,27 @@ namespace Lab1.HomeWorks
         /// <returns>Слово состоящее только из цифр.</returns>
         public static string Variant2(string[] temp)
         {
-            throw new System.Exception("Не реализован вариант6");
+            string[] LocalArray;
+            LocalArray = temp;
+            string Result = "";
+            int  TypeCheck;
+
+            foreach (string a in LocalArray)
+            {
+                if (int.TryParse(a, out int result))
+                {
+                    Result = a;
+                }
+
+            }
+
+           if (Result == "")
+            {
+                Result = null;
+            } 
+
+            return Result;
+
         }
     }
 }
