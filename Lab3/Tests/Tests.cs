@@ -9,7 +9,7 @@ namespace Lab3.Tests
 
         static object[] DivideCases =
         {
-            new object[] {
+            new object[] { 
                 new (string,int)[] {
                     ("Dima Smirnov", 22),
                     ("Dacha Sidorov", 25),
@@ -18,7 +18,7 @@ namespace Lab3.Tests
                     new ClassTest("Dima Smirnov", 22),
                     new ClassTest("Dacha Sidorov", 25),
                     new ClassTest("Ivanov Ivan", 32)}
-                        },
+                        } , 
             new object[] {
                 new (string,int)[] {
                     ("Dima Smirnov", 22),
@@ -28,19 +28,23 @@ namespace Lab3.Tests
                     new ClassTest("Dima Smirnov", 22),
                     new ClassTest("Ivanov Ivan", 22),
                     new ClassTest("Dacha Sidorov", 25)}
-                        }
+                        } 
         };
 
         [TestCaseSource(nameof(DivideCases))]
-        [Ignore("Убрать после реализации метода")]
+     
         public void TestWithSort((string, int)[] dataForTest, List<ClassTest> verificationData)
         {
+            
             List<ClassTest> tempList = new List<ClassTest>();
+
             foreach (var temp in dataForTest)
             {
                 tempList.Add(new ClassTest(temp.Item1, temp.Item2));
             }
+
             tempList.Sort();
+
             Assert.AreEqual(verificationData, tempList, "Данные реализованы не верно");
         }
     }
